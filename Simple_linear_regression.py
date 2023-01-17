@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
@@ -11,11 +12,11 @@ y = dataset.iloc[:,-1].values
 # Spliting the Dataset into training and testing data set
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state=1)
 
-# Creating the linear regression model
+# Training the linear regression model with the training data set
 regressor = LinearRegression()
 regressor.fit(x_train, y_train)
 
-# Predicting the training set
+# Predicting the testing set
 y_pred = regressor.predict(x_test)
 
 # Visualising the training set
